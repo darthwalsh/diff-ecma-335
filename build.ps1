@@ -15,4 +15,5 @@ Get-Content -Raw $txt
   | grep -v 'Ecma International 2012' # Remove footers
   | sed -e 's/[“”]/"/g' -e "s/[‘’]/'/g" # Normalize smart quotes
   | sed -e "s//→/g" # Normalize arrows
+  | sed -e "s//-/g" # Normalize bullets
   | Set-Content norm.txt -Encoding 'UTF-8'
