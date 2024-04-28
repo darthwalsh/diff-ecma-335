@@ -11,6 +11,7 @@ if (-not (Test-Path $txt)) {
     pdftotext -raw -layout $pdf $txt
 }
 
-Get-Content -Raw $txt `
-  | grep -v 'Ecma International 2012' `
+Get-Content -Raw $txt
+  | grep -v 'Ecma International 2012'
+  | sed -e 's/[“”]/"/g' -e "s/[‘’]/'/g"
   | Set-Content norm.txt -Encoding 'UTF-8'
