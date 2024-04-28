@@ -12,6 +12,7 @@ if (-not (Test-Path $txt)) {
 }
 
 Get-Content -Raw $txt
-  | grep -v 'Ecma International 2012'
-  | sed -e 's/[“”]/"/g' -e "s/[‘’]/'/g"
+  | grep -v 'Ecma International 2012' # Remove footers
+  | sed -e 's/[“”]/"/g' -e "s/[‘’]/'/g" # Normalize smart quotes
+  | sed -e "s//→/g" # Normalize arrows
   | Set-Content norm.txt -Encoding 'UTF-8'
