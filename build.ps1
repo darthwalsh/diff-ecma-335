@@ -12,6 +12,7 @@ if (-not (Test-Path $txt)) {
 
 Get-Content -Raw $txt
   | sed -e 's/[“”]/"/g' -e "s/[‘’]/'/g" # Normalize smart quotes
+  | sed -e "s/`f//g" # Remove form feed control chars
   | Set-Content norm.txt -Encoding 'UTF-8'
 
 
