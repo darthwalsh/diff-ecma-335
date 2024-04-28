@@ -13,6 +13,7 @@ if (-not (Test-Path $txt)) {
 
 Get-Content -Raw $txt
   | grep -v 'Ecma International 2012' # Remove footers
+  | sed -e "s/`f//g" # Remove form feed control chars
   | sed -e 's/[“”]/"/g' -e "s/[‘’]/'/g" # Normalize smart quotes
   | sed -e "s//→/g" # Normalize arrows
   | sed -e "s//-/g" # Normalize bullets

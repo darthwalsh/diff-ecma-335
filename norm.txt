@@ -7,7 +7,7 @@ Edition / June 2012
 Common Language
 Infrastructure (CLI)
 Partitions I to VI
-COPYRIGHT PROTECTED DOCUMENT
+COPYRIGHT PROTECTED DOCUMENT
 This Ecma Standard has been adopted by the General Assembly of June 2012.
 "COPYRIGHT NOTICE
 © <2012> Ecma International
@@ -673,7 +673,7 @@ VI.G.3 ParallelForEach 523
 VI.G.4 ParallelWhile 524
 VI.G.5 Debugging 524
 Index 525
-Common Language Infrastructure (CLI)
+Common Language Infrastructure (CLI)
 Partition I:
 Concepts and Architecture
 Foreword
@@ -22534,4 +22534,4 @@ void............................................................................
 .vtfixup............................................................................................................................................................ 118, 193
 WARNING tag ........................................................................................................................................................ 218
 widening ............................................................................................................................................................. 24, 65
-
+
