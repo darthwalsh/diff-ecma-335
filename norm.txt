@@ -910,7 +910,7 @@ managing types. The CTS establishes a framework that enables cross-language inte
 type safety, and high performance code execution.
 delegate: A reference type such that an instance of it can encapsulate one or more methods in
 an invocation list. Given a delegate instance and an appropriate set of arguments, one can
-invoke all of the methods in a delegate’s invocation list with that set of arguments.
+invoke all of the methods in a delegate's invocation list with that set of arguments.
 event: A member that enables an object or class to provide notifications.
 Execution Engine: See Virtual Execution System.
 field: A member that designates a typed memory location that stores some data in a program.
@@ -978,7 +978,7 @@ describes both the storage that it occupies and the meanings of the bits in its 
 and also the operations that can be performed on that representation. Values are intended for
 representing the simple types and non-objects in programming languages.
 verification: The checking of both CIL and its related metadata to ensure that the CIL code
-sequences do not permit any access to memory outside the program’s logical address space. In
+sequences do not permit any access to memory outside the program's logical address space. In
 conjunction with the validation tests, verification ensures that the program cannot access
 memory or other resources to which it is not granted access.
 Virtual Execution System (VES): This system implements and enforces the CTS model.
@@ -1654,7 +1654,7 @@ implementation of a virtual method wishes to call the implementation supplied by
 class. The CTS allows this to be null inside the body of a virtual method.
 [Rationale: Allowing a virtual method to be called with a non-virtual call eliminates the need
 for a "call super" instruction and allows version changes between virtual and non-virtual
-methods. It requires CIL generators to insert explicit tests for a null pointer if they don’t want
+methods. It requires CIL generators to insert explicit tests for a null pointer if they don't want
 the null this pointer to propagate to called methods. end rationale]
 A virtual or instance method can also be called by a different mechanism, a virtual call. Any
 type that inherits from a type that defines a virtual method can provide its own implementation
@@ -2786,7 +2786,7 @@ end example]
 While hiding applies to all members of a type, overriding deals with object layout and is
 applicable only to instance fields and virtual methods. The CTS provides two forms of member
 overriding, new slot and expect existing slot. A member of a derived type that is marked as
-a new slot will always get a new slot in the object’s layout, guaranteeing that the base field or
+a new slot will always get a new slot in the object's layout, guaranteeing that the base field or
 method is available in the object by using a qualified reference that combines the name of the
 base type with the name of the member and its type or signature. A member of a derived type
 that is marked as expect existing slot will re-use (i.e., share or override) a slot that corresponds
@@ -3211,7 +3211,7 @@ End informative text.
 Language Specification
 I.10.1 Identifiers
 Languages that are either case-sensitive or case-insensitive can support the CLS. Since its rules
-apply only to items exported to other languages, private members or types that aren’t
+apply only to items exported to other languages, private members or types that aren't
 exported from an assembly can use any names they choose. For interoperation, however, there
 are some restrictions.
 In order to make tools work well with a case-sensitive language it is important that the exact
@@ -3255,7 +3255,7 @@ Return type
 Whether a parameter is passed by value or by reference
 There is one exception to this rule. For the special names op_Implicit and op_Explicit,
 described in §I.10.3.3, methods can be provided that differ only by their return type. These are
-marked specially and can be ignored by compilers that don’t support operator overloading.
+marked specially and can be ignored by compilers that don't support operator overloading.
 Properties shall not be overloaded by type (that is, by the return type of their getter method),
 but they can be overloaded with different number or types of indices (that is, by the number
 and types of the parameters of their getter methods). The overloading rules for properties are
@@ -3269,7 +3269,7 @@ op_Explicit, which can also be overloaded based on their return type.
 [Note:
 CLS (consumer): Can assume that only properties and methods are overloaded,
 and need not support overloading based on return type unless providing special
-syntax for operator overloading. If return type overloading isn’t supported, then the
+syntax for operator overloading. If return type overloading isn't supported, then the
 op_Implicit and op_Explicit can be ignored since the functionality shall be
 provided in some other way by a CLS-compliant framework. Consumers must first
 apply the hide-by-name and hide-by-signature-and-name rules (§I.8.10.4) to avoid
@@ -3392,7 +3392,7 @@ An implicit (widening) coercion shall not lose any magnitude or precision. These
 be provided using a method named op_Implicit.
 An explicit (narrowing) coercion can lose magnitude or precision. These should be
 provided using a method named op_Explicit.
-[Note: Conversions provide functionality that can’t be generated in other ways, and many
+[Note: Conversions provide functionality that can't be generated in other ways, and many
 languages do not support the use of the conversion operators through special syntax.
 Therefore, CLS rules require that the same functionality be made available through an
 alternate mechanism. It is recommended that the more common ToXxx (where Xxx is the
@@ -3436,7 +3436,7 @@ EventRaise, used to indicate that an event has occurred
 Pattern: void family raise_<EventName> (Event e)
 For Properties:
 An individual property is created by deciding on the type returned by its getter method and the
-types of the getter’s parameters (if any). Then, two methods are created with names based on
+types of the getter's parameters (if any). Then, two methods are created with names based on
 the name of the property and these types. For the examples below we define two properties:
 Name takes no parameters and returns a System.String, while Item takes a System.Object
 parameter and returns a System.Object. Item is referred to as an indexed property, meaning
@@ -3822,7 +3822,7 @@ CLS Rule 25: No longer used. [Note: In an earlier version of this standard, this
 "The accessibility of a property and of its accessors shall be identical." The removal of this rule
 allows, for example, public access to a getter while restricting access to the setter. end note]
 (§I.8.11.3)
-CLS Rule 26: A property’s accessors shall all be static, all be virtual, or all be instance.
+CLS Rule 26: A property's accessors shall all be static, all be virtual, or all be instance.
 (§I.8.11.3)
 CLS Rule 27: The type of a property shall be the return type of the getter and the type of the
 last argument of the setter. The types of the parameters of the property shall be the types of the
@@ -3895,17 +3895,17 @@ the CLI. That is, these data types can be manipulated using the CIL instruction 
 Partition III).
 Table I.6: Data Types Directly Supported by the CLI
 Data Type Description
-int8 8-bit two’s-complement signed value
+int8 8-bit two's-complement signed value
 unsigned int8 8-bit unsigned binary value
-int16 16-bit two’s-complement signed value
+int16 16-bit two's-complement signed value
 unsigned int16 16-bit unsigned binary value
-int32 32-bit two’s-complement signed value
+int32 32-bit two's-complement signed value
 unsigned int32 32-bit unsigned binary value
-int64 64-bit two’s-complement signed value
+int64 64-bit two's-complement signed value
 unsigned int64 64-bit unsigned binary value
 float32 32-bit IEC 60559:1989 floating-point value
 float64 64-bit IEC 60559:1989 floating-point value
-native int native size two’s-complement signed value
+native int native size two's-complement signed value
 Data Type Description
 native unsigned
 int
@@ -3948,7 +3948,7 @@ from the stack.
 I.12.1.1 Native size: native int, native unsigned
 int, O and &
 The native-size types (native int, native unsigned int, O, and &) are a mechanism in the
-CLI for deferring the choice of a value’s size. These data types exist as CIL types; however, the
+CLI for deferring the choice of a value's size. These data types exist as CIL types; however, the
 CLI maps each to the native size for a specific processor. (For example, data type I would map
 to int32 on a Pentium processor, but to int64 on an IA64 processor.) So, the choice of size is
 deferred until JIT compilation or runtime, when the CLI has been initialized and the
@@ -4416,7 +4416,7 @@ address space.
 [Note: A thread of control can be thought of, somewhat simplistically, as a singly linked list of
 method states, where a new state is created and linked back to the current state by a method
 call instruction—the traditional model of a stack-based calling sequence. Notice that this model
-of the thread of control doesn’t correctly explain the operation of tail., jmp, or throw
+of the thread of control doesn't correctly explain the operation of tail., jmp, or throw
 instructions. end note]
 Figure 2: Machine State Model illustrates the machine state model, which includes threads of
 control, method states, and multiple heaps in a shared address space. Method state, shown
@@ -4504,7 +4504,7 @@ Special instructions perform numeric conversions, with or without overflow detec
 between different sizes and between signed and unsigned integers.
 Special instructions treat an integer on the stack as though it were unsigned.
 Instructions that create pointers which are guaranteed not to point into the memory
-manager’s heaps (e.g., ldloca, ldarga, and ldsflda) produce transient pointers (type *)
+manager's heaps (e.g., ldloca, ldarga, and ldsflda) produce transient pointers (type *)
 that can be used wherever a managed pointer (type &) or unmanaged pointer (type native
 unsigned int) is expected.
 When a method is called, an unmanaged pointer (type native unsigned int or *) is
@@ -4595,7 +4595,7 @@ initialize the method state areas (see §I.12.3.2) as follows:
 that hold objects. In addition, if the localsinit flag is set in the method header, then the
 local variables array is initialized to 0 for all integer types and to 0.0 for all floating-point
 types. Value types are not initialized by the CLI, but verified code will supply a call to an
-initializer as part of the method’s entry point code.
+initializer as part of the method's entry point code.
 3. The evaluation stack is empty.
 I.12.4.1.1 Call site descriptors
 Call sites specify additional information that enables an interpreter or JIT compiler to
@@ -4622,7 +4622,7 @@ methods or the (statically known) base class method within an instance method bo
 pointer is passed on the stack and the instruction contains only the call site description.
 callvirt, part of the CIL common type system instruction set, uses the class of an object
 (known only at runtime) to determine the method to be called. The instruction includes a
-method reference, but the particular method isn’t computed until the call actually occurs.
+method reference, but the particular method isn't computed until the call actually occurs.
 This allows an instance of a derived class to be supplied and the method appropriate for
 that derived class to be invoked. The callvirt instruction is used both for instance
 methods and methods on interfaces. For further details, see the CTS specification and the
@@ -4999,7 +4999,7 @@ The check's exception is thrown some time in the sequence, unless the sequence t
 another exception. When multiple relaxed checks fail, it is unspecified as to which
 exception is thrown by the VES.
 [Note: Relaxed checks preserve verifiability, but not necessarily security. Because a relaxed
-check’s exception might be deferred and subsequent code allowed to execute, programmers
+check's exception might be deferred and subsequent code allowed to execute, programmers
 should never rely on implicit checks to preserve security, but instead use explicit checks and
 throws when security is an issue. end note]
 [Rationale: Different programmers have different goals. For some, trading away precise
@@ -5116,7 +5116,7 @@ because the storage format as specified in clauses §II.22 through §II.25 is en
 efficient for both storage space and access time, but this comes at the cost of the simplicity
 desirable for describing its semantics. end rationale]
 II.3 Validation and verification
-Validation refers to the application of a set of tests on any file to check that the file’s format,
+Validation refers to the application of a set of tests on any file to check that the file's format,
 metadata, and CIL are self-consistent. These tests are intended to ensure that the file conforms
 to the normative requirements of this specification. When a conforming implementation of the
 CLI is presented with a non-conforming file, the behavior is unspecified.
@@ -6635,7 +6635,7 @@ Decl ::=
 | …
 The logical metadata table created by this declaration is specified in §II.22.37.
 [Rationale: For historical reasons, many of the syntactic categories used for defining types
-incorrectly use “class" instead of "type" in their name. All classes are types, but "types" is a
+incorrectly use "class" instead of "type" in their name. All classes are types, but "types" is a
 broader term encompassing value types, and interfaces as well. end rationale]
 II.10.1 Type header (ClassHeader)
 A type header consists of
@@ -9719,7 +9719,7 @@ attached to the immediately preceding declaration)
 The Bytes item is not required if the constructor takes no arguments. In such cases, all that
 matters is the presence of the custom attribute.
 If the constructor takes parameters, their values shall be specified in the Bytes item. The
-format for this ‘blob’ is defined in §II.23.3.
+format for this 'blob' is defined in §II.23.3.
 [Example: The following shows a class that is marked with the attribute called
 System.CLSCompliantAttribute and a method that is marked with the attribute called
 System.ObsoleteAttribute.
@@ -10036,7 +10036,7 @@ neither before its start (offset 0), nor after its end.
 Every index into the Guid heap shall lie between 1 and the maximum element number
 in this module, inclusive.
 Every index (row number) into another metadata table shall lie between 0 and that
-table’s row count + 1 (for some tables, the index can point just past the end of any
+table's row count + 1 (for some tables, the index can point just past the end of any
 target table, meaning it indexes nothing).
 Valid Bitmasks: Columns which are bitmasks shall have only valid permutations of bits
 set.
@@ -10945,7 +10945,7 @@ table [ERROR]
 End informative text.
 II.22.25 MemberRef: 0x0A
 The MemberRef table combines two sorts of references, to Methods and to Fields of a class,
-known as 'MethodRef' and ‘FieldRef’, respectively.
+known as 'MethodRef' and 'FieldRef', respectively.
 The MemberRef table has the following columns:
 Class (an index into the MethodDef, ModuleRef, TypeDef, TypeRef, or TypeSpec tables;
 more precisely, a MemberRefParent (§II.24.2.6) coded index)
@@ -12074,7 +12074,7 @@ Rotate this value 1 bit left, giving 0x01 (-2 ) to 0x7E (2 -1);
 Encode as a one-byte integer, bit 7 clear, rotated value in bits 6 through 0, giving
 0x01 (-2 ) to 0x7E (2 -1).
 If the value lies between -2 and 2 -1 inclusive:
-Represent the value as a 14-bit 2’s complement number, giving 0x2000 (-2 ) to
+Represent the value as a 14-bit 2's complement number, giving 0x2000 (-2 ) to
 0x1FFF (2 -1);
 Rotate this value 1 bit left, giving 0x0001 (-2 ) to 0x3FFE (2 -1);
 28 28
@@ -12190,7 +12190,7 @@ ParamCount is an unsigned integer that holds the number of parameters (0 or more
 any number between 0 and 0x1FFFFFFF. The compiler compresses it (see §15) – before storing
 into the 'blob' (ParamCount counts just the method parameters – it does not include the
 method's return type)
-The RetType item describes the type of the method’s return value (§II.23.2.11)
+The RetType item describes the type of the method's return value (§II.23.2.11)
 The Param item describes the type of each of the method's parameters. There shall be
 ParamCount instances of the Param item (§II.23.2.10).
 The Param item describes the type of each of the method's parameters. There shall be
@@ -12258,7 +12258,7 @@ ParamCount parameters of the setter
 The return type of a getter is exactly the same as the type of the last parameter supplied to
 the setter
 The syntax diagram for a PropertySig looks like this:
-The first byte of the Signature holds bits for HASTHIS and PROPERTY. These are OR’d together.
+The first byte of the Signature holds bits for HASTHIS and PROPERTY. These are OR'd together.
 Type specifies the type returned by the getter method for this property. Type is defined in
 §II.23.2.12.
 Param is defined in §II.23.2.10.
@@ -13580,7 +13580,7 @@ another allocator). If, however, a managed pointer refers to memory controlled b
 collector it shall point to either a field of an object, an element of an array, or the address of the
 element just past the end of an array. If address arithmetic is used to create a managed pointer
 that refers to any other location (an object header or a gap in the allocated memory) the
-garbage collector’s behavior is unspecified.
+garbage collector's behavior is unspecified.
 III.1.1.5.1 Unmanaged pointers
 Unmanaged pointers are the traditional pointers used in languages like C and C++. There are
 no restrictions on their use, although for the most part they result in code that cannot be
@@ -14333,7 +14333,7 @@ instruction is specified by each instruction definition. Instructions follow eac
 padding in a stream of bytes that is both alignment and byte-order insensitive.
 Each instruction occupies an exact number of bytes, and until the end of the instruction block,
 the next instruction begins immediately at the next byte. It is invalid for the instruction block
-(as specified by the block’s length) to end without forming a complete last instruction.
+(as specified by the block's length) to end without forming a complete last instruction.
 Instruction prefixes extend the length of an instruction without introducing a new instruction;
 an instruction having one or more prefixes introduces only one instruction that begins at the
 first byte of the first instruction prefix.
@@ -14678,7 +14678,7 @@ The VES ensures that all statics are initially zeroed (i.e., built-in types are 
 references are null), hence the verification algorithm does not test for definite assignment to
 statics.
 An object constructor shall not return unless a constructor for the base class or a different
-construct for the object’s class has been called on the newly constructed object. The verification
+construct for the object's class has been called on the newly constructed object. The verification
 algorithm shall treat the this pointer as uninitialized unless the base class constructor has
 been called. No operations can be performed on an uninitialized this except for storing into
 and loading from the object's fields.
@@ -16916,7 +16916,7 @@ method. If an index of 65535 had been made valid, it would require a wider integ
 number of locals in such a method. end rationale]
 Verifiability:
 Verification also checks that the type of value is verifier-assignable-to the type of the local, as
-specified in the current method’s locals signature.
+specified in the current method's locals signature.
 III.3.64 sub – subtract numeric values
 Format Assembly Format Description
 59 sub Subtract value2 from value1, returning a new value.
@@ -18178,7 +18178,7 @@ CLI features. Each Library described in §IV.5 has text that defines the CLI fea
 required for implementations that support that Library. end note]
 3. Modifications to types defined in other Libraries. These modifications typically involve the
 addition of methods and interfaces to types belonging to some other Library, and
-additional exception types that can be thrown by methods of that other Library’s types.
+additional exception types that can be thrown by methods of that other Library's types.
 These modifications shall provide only additional functionality or specify behavior where
 it was previously unspecified; they shall not be used to alter previously specified behavior.
 [Example: Consider the Extended Numerics Library. Since it provides a base data type,
@@ -18330,7 +18330,7 @@ Part of Library: (none)
 IV.5 The standard libraries
 The detailed content of each Library, in terms of the types it provides and the changes it makes
 to types in other Libraries, is provided in XML form. This clause provides a brief description of
-each Library’s purpose as well as specifying the features of the CLI required by each Library
+each Library's purpose as well as specifying the features of the CLI required by each Library
 beyond those required by the Kernel Profile.
 IV.5.1 General comments
 Unless stated otherwise in the documentation of a method, all copy operations are shallow, not
@@ -19183,7 +19183,7 @@ sub
 tail.
 call bool EvenOdd::IsOdd(int32)
 ret
-} // end of method ‘EvenOdd::IsEven’
+} // end of method 'EvenOdd::IsEven'
 .method private static bool IsOdd(int32 N) cil managed
 { .maxstack 2
 // Demonstrates use of argument names and labels
@@ -19201,7 +19201,7 @@ sub
 tail.
 call bool EvenOdd::IsEven(int32)
 ret
-} // end of method ‘EvenOdd::IsOdd’
+} // end of method 'EvenOdd::IsOdd'
 .method public static void Test(int32 N) cil managed
 { .maxstack 1
 ldarg N
@@ -19218,8 +19218,8 @@ ret
 LoadOdd:
 ldstr "odd"
 br Print
-} // end of method ‘EvenOdd::Test’
-} // end of class ‘EvenOdd’
+} // end of method 'EvenOdd::Test'
+} // end of class 'EvenOdd'
 //Global method
 .method public static void main() cil managed
 { .entrypoint
@@ -19233,7 +19233,7 @@ ldc.i4 100
 ldc.i4 1000001
 call void EvenOdd::Test(int32)
 ret
-} // end of global method ‘main’
+} // end of global method 'main'
 end example]
 VI.B.2 Using value types
 The following program shows how rational numbers can be implemented using value types.
@@ -22108,7 +22108,7 @@ Vectorizing a loop usually requires knowing two things:
 1. The loop iterations are independent
 2. The number of loop iterations is known.
 if(lower < upper) {
-// “Landing pad” in compiler parlance.
+// "Landing pad" in compiler parlance.
 if( lower < 0 || upper > a.Length || upper > b.Length || upper > c.Length
 || upper > d.Length)
 throw IndexOutOfRangeException;
