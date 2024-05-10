@@ -13,6 +13,7 @@ if (-not (Test-Path $txt)) {
 Get-Content -Raw $txt
   | sed -e 's/[“”]/"/g' -e "s/[‘’]/'/g" # Normalize smart quotes
   | sed -e "s/`f//g" # Remove form feed control chars
+  | sed --null-data --regexp-extended "s/\n([a-z])/ \1/g" # Remove newline before lowercase
   | Set-Content norm.txt -Encoding 'UTF-8'
 
 
